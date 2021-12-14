@@ -1,4 +1,4 @@
-package com.mkhldvdv.bdr.backend.model;
+package com.mkhldvdv.bdr.backend.domain;
 
 import lombok.Builder;
 import lombok.Data;
@@ -7,6 +7,6 @@ import lombok.Data;
 @Builder
 public class Version {
 
-    private String version;
+    private String apiVersion;
 
 }
