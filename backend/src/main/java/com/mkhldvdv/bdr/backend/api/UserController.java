@@ -1,12 +1,18 @@
 package com.mkhldvdv.bdr.backend.api;
 
-import com.mkhldvdv.bdr.backend.domain.User;
+import com.mkhldvdv.bdr.backend.domain.UserRecord;
 import com.mkhldvdv.bdr.backend.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -18,25 +24,25 @@ public class UserController {
     private final UserService userService;
 
     @PostMapping(path = "/user")
-    public User create(@RequestBody User user) {
+    public UserRecord createOrUpdate(@RequestBody @Valid UserRecord user) {
         log.info("User: {}", user);
-        return userService.create(user);
+        return userService.createOrUpdate(user);
     }
 
     @PostMapping(path = "/user/list")
-    public List<User> create(@RequestBody List<User> userList) {
+    public List<UserRecord> createOrUpdate(@RequestBody List<UserRecord> userList) {
         log.info("User list: {}", userList);
-        return userService.create(userList);
+        return userService.createOrUpdate(userList);
     }
 
     @DeleteMapping(path = "/user")
-    public User delete(@RequestBody User user) {
+    public UserRecord delete(@RequestBody UserRecord user) {
         log.info("User: {}", user);
         return userService.delete(user);
     }
 
     @DeleteMapping(path = "/user/{userId}")
-    public User deleteById(@PathVariable String userId) {
+    public UserRecord deleteById(@PathVariable String userId) {
         log.info("UserId: {}", userId);
         return userService.deleteById(userId);
     }

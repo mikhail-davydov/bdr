@@ -2,10 +2,10 @@ package com.mkhldvdv.bdr.backend.service;
 
 import com.google.common.collect.Lists;
 import com.mkhldvdv.bdr.backend.dao.DataRepository;
-import com.mkhldvdv.bdr.backend.domain.Data;
+import com.mkhldvdv.bdr.backend.domain.DataRecord;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.jvnet.hk2.annotations.Service;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
@@ -18,26 +18,26 @@ public class DataService {
     private final DataRepository dataRepository;
 
     // create
-    public Data create(Data data) {
+    public DataRecord createOrUpdate(DataRecord data) {
         log.info("Create Data: {}", data);
-        return dataRepository.insert(data);
+        return dataRepository.save(data);
     }
 
-    public List<Data> create(List<Data> dataList) {
+    public List<DataRecord> createOrUpdate(List<DataRecord> dataList) {
         log.info("Create Data list: {}", dataList);
-        return dataRepository.insert(dataList);
+        return dataRepository.saveAll(dataList);
     }
 
     // delete
-    public Data delete(Data data) {
+    public DataRecord delete(DataRecord data) {
         log.info("Delete Data: {}", data);
         dataRepository.delete(data);
         return data;
     }
 
-    public Data deleteById(String dataId) {
+    public DataRecord deleteById(String dataId) {
         log.info("Delete Data by ID: {}", dataId);
-        Optional<Data> data = dataRepository.findById(dataId);
+        Optional<DataRecord> data = dataRepository.findById(dataId);
         data.ifPresent(value -> dataRepository.deleteById(dataId));
         return data.orElseGet(() -> {
             log.info("No Data record with ID: {}", dataId);
@@ -48,7 +48,7 @@ public class DataService {
     public List<String> deleteAllById(List<String> dataIdList) {
         log.info("Delete Data list by IDs: {}", dataIdList);
         List<String> dataIdListToDelete = Lists.newArrayList(dataRepository.findAllById(dataIdList)).stream()
-                .map(Data::getDataId)
+                .map(DataRecord::getDataId)
                 .toList();
         dataRepository.deleteAllById(dataIdListToDelete);
         List<String> dataIdListNotDeleted = Lists.newArrayList(dataIdList);
