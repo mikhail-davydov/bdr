@@ -19,6 +19,7 @@
     <properties>
         <java.version>17</java.version>
         <testcontainers.version>1.16.2</testcontainers.version>
+        <guava.version>31.0.1-jre</guava.version>
     </properties>
 
     <dependencies>
@@ -46,6 +47,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- others -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
         </dependency>
 
         <dependency>
