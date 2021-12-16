@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -23,19 +24,19 @@ public class DataController {
     private final DataService dataService;
 
     @PostMapping(path = "/data")
-    public DataRecord createOrUpdate(@RequestBody DataRecord data) {
+    public DataRecord createOrUpdate(@RequestBody @Valid DataRecord data) {
         log.info("Data: {}", data);
         return dataService.createOrUpdate(data);
     }
 
     @PostMapping(path = "/data/list")
-    public List<DataRecord> createOrUpdate(@RequestBody List<DataRecord> dataList) {
+    public List<DataRecord> createOrUpdate(@RequestBody @Valid List<DataRecord> dataList) {
         log.info("Data list: {}", dataList);
         return dataService.createOrUpdate(dataList);
     }
 
     @DeleteMapping(path = "/data")
-    public DataRecord delete(@RequestBody DataRecord data) {
+    public DataRecord delete(@RequestBody @Valid DataRecord data) {
         log.info("Data: {}", data);
         return dataService.delete(data);
     }

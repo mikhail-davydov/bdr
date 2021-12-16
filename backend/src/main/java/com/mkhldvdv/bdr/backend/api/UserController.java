@@ -30,13 +30,13 @@ public class UserController {
     }
 
     @PostMapping(path = "/user/list")
-    public List<UserRecord> createOrUpdate(@RequestBody List<UserRecord> userList) {
+    public List<UserRecord> createOrUpdate(@RequestBody @Valid List<UserRecord> userList) {
         log.info("User list: {}", userList);
         return userService.createOrUpdate(userList);
     }
 
     @DeleteMapping(path = "/user")
-    public UserRecord delete(@RequestBody UserRecord user) {
+    public UserRecord delete(@RequestBody @Valid UserRecord user) {
         log.info("User: {}", user);
         return userService.delete(user);
     }

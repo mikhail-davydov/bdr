@@ -21,10 +21,16 @@ public class UserRecord {
 
     @MongoId(FieldType.STRING)
     private String userId = UUID.randomUUID().toString();
-    private String firstname;
-    private String lastname;
-    @Email
     @NotBlank
+    private String firstname;
+    @NotBlank
+    private String lastname;
+    @NotBlank
+    @Email
     private String email;
+    @NotBlank
+    private String phone;
+    @NotBlank
+    private String billAddress;
 
 }
