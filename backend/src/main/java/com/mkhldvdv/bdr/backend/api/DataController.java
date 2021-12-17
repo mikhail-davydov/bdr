@@ -23,6 +23,7 @@ public class DataController {
 
     private final DataService dataService;
 
+    // create / update
     @PostMapping(path = "/data")
     public DataRecord createOrUpdate(@RequestBody @Valid DataRecord data) {
         log.info("Data: {}", data);
@@ -35,6 +36,7 @@ public class DataController {
         return dataService.createOrUpdate(dataList);
     }
 
+    // delete
     @DeleteMapping(path = "/data")
     public DataRecord delete(@RequestBody @Valid DataRecord data) {
         log.info("Data: {}", data);
@@ -47,8 +49,8 @@ public class DataController {
         return dataService.deleteById(dataId);
     }
 
-    @DeleteMapping(path = "/data/list/{dataIdList}")
-    public List<String> deleteAllById(@PathVariable List<String> dataIdList) {
+    @DeleteMapping(path = "/data/list")
+    public List<String> deleteAllById(@RequestBody List<String> dataIdList) {
         log.info("DataId list: {}", dataIdList);
         return dataService.deleteAllById(dataIdList);
     }

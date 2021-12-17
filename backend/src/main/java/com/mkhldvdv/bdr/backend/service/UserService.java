@@ -17,7 +17,7 @@ public class UserService {
 
     private final UserRepository userRepository;
 
-    // create
+    // create / update
     public UserRecord createOrUpdate(UserRecord user) {
         log.info("Create User: {}", user);
         return userRepository.save(user);

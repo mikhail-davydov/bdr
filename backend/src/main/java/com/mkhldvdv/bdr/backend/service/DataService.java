@@ -17,7 +17,7 @@ public class DataService {
 
     private final DataRepository dataRepository;
 
-    // create
+    // create / update
     public DataRecord createOrUpdate(DataRecord data) {
         log.info("Create Data: {}", data);
         return dataRepository.save(data);

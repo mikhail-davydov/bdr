@@ -23,6 +23,7 @@ public class UserController {
 
     private final UserService userService;
 
+    // create / update
     @PostMapping(path = "/user")
     public UserRecord createOrUpdate(@RequestBody @Valid UserRecord user) {
         log.info("User: {}", user);
@@ -35,6 +36,7 @@ public class UserController {
         return userService.createOrUpdate(userList);
     }
 
+    // delete
     @DeleteMapping(path = "/user")
     public UserRecord delete(@RequestBody @Valid UserRecord user) {
         log.info("User: {}", user);
@@ -47,8 +49,8 @@ public class UserController {
         return userService.deleteById(userId);
     }
 
-    @DeleteMapping(path = "/user/list/{userIdList}")
-    public List<String> deleteAllById(@PathVariable List<String> userIdList) {
+    @DeleteMapping(path = "/user/list")
+    public List<String> deleteAllById(@RequestBody List<String> userIdList) {
         log.info("UserId list: {}", userIdList);
         return userService.deleteAllById(userIdList);
     }
