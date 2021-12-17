@@ -1,6 +1,5 @@
-package com.mkhldvdv.bdr.backend.api;
+package com.mkhldvdv.bdr.backend.v2.version;
 
-import com.mkhldvdv.bdr.backend.domain.Version;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
