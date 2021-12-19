@@ -26,7 +26,7 @@ public abstract class AbstractSaveController<I extends MongoItem, IL extends Mon
 
     @PostMapping(path = "/list")
     public List<I> createOrUpdate(@RequestBody @Valid IL itemList) {
-        log.info(Constants.LOG_ITEM_ID_LIST_TEMPLATE, itemList);
+        log.info(Constants.LOG_ITEM_LIST_TEMPLATE, itemList);
         return service.save(itemList.items());
     }
 

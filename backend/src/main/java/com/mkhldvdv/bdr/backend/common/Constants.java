@@ -13,13 +13,17 @@ public class Constants {
 
     // logs
     public static final String LOG_ITEM_TEMPLATE = "Item: {}";
+    public static final String LOG_ITEM_LIST_TEMPLATE = "Item list: {}";
     public static final String LOG_ITEM_ID_TEMPLATE = "ItemId: {}";
     public static final String LOG_ITEM_ID_LIST_TEMPLATE = "ItemId list: {}";
 
-    public static final String LOG_CREATE_ITEM_TEMPLATE = "Create item: {}";
-    public static final String LOG_CREATE_ITEM_LIST_TEMPLATE = "Create item list: {}";
+    public static final String LOG_FIND_ITEM_TEMPLATE = "Find item: {}";
+    public static final String LOG_FIND_ITEM_ID_TEMPLATE = "Find item by ID: {}";
+    public static final String LOG_FIND_ITEM_ID_LIST_TEMPLATE = "Find item list by IDs: {}";
 
-    public static final String LOG_DELETE_ITEM_TEMPLATE = "Delete item: {}";
+    public static final String LOG_SAVE_ITEM_TEMPLATE = "Save item: {}";
+    public static final String LOG_SAVE_ITEM_LIST_TEMPLATE = "Save item list: {}";
+
     public static final String LOG_DELETE_ITEM_ID_TEMPLATE = "Delete item by ID: {}";
     public static final String LOG_DELETE_ITEM_ID_LIST_TEMPLATE = "Delete item list by IDs: {}";
 
