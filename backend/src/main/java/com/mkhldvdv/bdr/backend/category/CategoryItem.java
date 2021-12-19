@@ -30,6 +30,7 @@ public class CategoryItem extends MongoItem {
     @NotBlank
     private String categoryDescription;
     private String parentCategoryId;
+    private boolean deleted;
 
     @Override
     public String itemId() {

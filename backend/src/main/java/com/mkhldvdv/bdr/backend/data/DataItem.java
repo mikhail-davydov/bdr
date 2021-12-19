@@ -11,6 +11,7 @@ import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.UUID;
@@ -36,10 +37,10 @@ public class DataItem extends MongoItem {
     private String categoryDescription;
     private String parentCategoryId;
     private String parentCategoryDescription;
-    @NotBlank
+    @NotNull
     private BigDecimal amount;
     private int priority;
-    private Date date = new Date();
+    private Date createdAt = new Date();
 
     @Override
     public String itemId() {

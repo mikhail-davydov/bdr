@@ -38,6 +38,7 @@ public class UserItem extends MongoItem {
     private String phone;
     @NotBlank
     private String billAddress;
+    private boolean deleted;
 
     @Override
     public String itemId() {
