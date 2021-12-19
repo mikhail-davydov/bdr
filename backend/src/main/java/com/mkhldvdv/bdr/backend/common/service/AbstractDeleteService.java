@@ -23,14 +23,6 @@ public abstract class AbstractDeleteService<I extends MongoItem, R extends Mongo
     private final R repository;
 
     @Override
-    public I delete(I item) {
-        log.info(Constants.LOG_DELETE_ITEM_TEMPLATE, item);
-        item.setDeletedFlag();
-        repository.save(item);
-        return item;
-    }
-
-    @Override
     public I deleteById(String itemId) {
         log.info(Constants.LOG_DELETE_ITEM_ID_TEMPLATE, itemId);
         Optional<I> data = repository.findById(itemId);
