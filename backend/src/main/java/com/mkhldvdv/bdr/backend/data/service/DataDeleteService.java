@@ -1,8 +1,8 @@
 package com.mkhldvdv.bdr.backend.data.service;
 
 import com.mkhldvdv.bdr.backend.common.service.AbstractDeleteService;
-import com.mkhldvdv.bdr.backend.data.DataItem;
 import com.mkhldvdv.bdr.backend.data.DataRepository;
+import com.mkhldvdv.bdr.backend.data.item.DataItem;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 

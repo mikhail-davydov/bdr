@@ -2,6 +2,7 @@ package com.mkhldvdv.bdr.backend.common.api;
 
 import com.mkhldvdv.bdr.backend.common.Constants;
 import com.mkhldvdv.bdr.backend.common.item.MongoItem;
+import com.mkhldvdv.bdr.backend.common.item.MongoItemList;
 import com.mkhldvdv.bdr.backend.common.service.IAbstractDeleteService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -14,7 +15,7 @@ import java.util.List;
 
 @Slf4j
 @RequiredArgsConstructor
-public abstract class AbstractDeleteController<I extends MongoItem, S extends IAbstractDeleteService<I>> {
+public abstract class AbstractDeleteController<I extends MongoItem, IL extends MongoItemList<I>, S extends IAbstractDeleteService<I>> {
 
     private final S service;
 
@@ -31,9 +32,9 @@ public abstract class AbstractDeleteController<I extends MongoItem, S extends IA
     }
 
     @DeleteMapping(path = "/list")
-    public List<String> deleteAllById(@RequestBody List<String> itemIdList) {
+    public List<String> deleteAllById(@RequestBody IL itemIdList) {
         log.info(Constants.LOG_ITEM_ID_LIST_TEMPLATE, itemIdList);
-        return service.deleteAllById(itemIdList);
+        return service.deleteAllById(itemIdList.ids());
     }
 
 }

@@ -9,6 +9,8 @@ public class Constants {
 
     public static final String ITEM_ID_TEMPLATE = "%s-%s";
 
+    public static final int TTL = 31536000; // seconds, 1 year, 365 days
+
     // logs
     public static final String LOG_ITEM_TEMPLATE = "Item: {}";
     public static final String LOG_ITEM_ID_TEMPLATE = "ItemId: {}";

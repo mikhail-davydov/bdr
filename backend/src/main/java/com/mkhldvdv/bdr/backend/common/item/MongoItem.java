@@ -4,4 +4,6 @@ public abstract class MongoItem {
 
     public abstract String itemId();
 
+    public abstract void setDeletedFlag();
+
 }

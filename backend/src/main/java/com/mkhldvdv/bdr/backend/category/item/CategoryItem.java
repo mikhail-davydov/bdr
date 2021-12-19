@@ -1,4 +1,4 @@
-package com.mkhldvdv.bdr.backend.category;
+package com.mkhldvdv.bdr.backend.category.item;
 
 import com.mkhldvdv.bdr.backend.common.item.MongoItem;
 import lombok.AllArgsConstructor;
@@ -37,4 +37,8 @@ public class CategoryItem extends MongoItem {
         return getCategoryId();
     }
 
+    @Override
+    public void setDeletedFlag() {
+        setDeleted(true);
+    }
 }
