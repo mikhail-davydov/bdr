@@ -1,0 +1,49 @@
+import React from "react";
+
+import '../button/Button.css';
+
+import './Main.css';
+import './__menu/MainMenu.css';
+
+class Main extends React.Component {
+    render() {
+        return (
+            <main className="main">
+                <ul className="main__menu">
+                    <li className="main__menu-item">
+                        <button className="button" type="button">
+                            По периодам/Лист 1
+                        </button>
+                    </li>
+                    <li className="main__menu-item">
+                        <button className="button" type="button">
+                            По дням/Лист 2
+                        </button>
+                    </li>
+                    <li className="main__menu-item">
+                        <button className="button" type="button">
+                            Аналитика
+                        </button>
+                    </li>
+                    <li className="main__menu-item">
+                        <button className="button" type="button">
+                            Рекомендации
+                        </button>
+                    </li>
+                </ul>
+                <div className="content">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid atque blanditiis consequuntur
+                    doloribus error esse excepturi, explicabo facere id in nihil odio officiis omnis provident quam
+                    qui quisquam quod totam veniam vitae! Dolorem esse ex expedita molestias repellat. Amet
+                    assumenda dicta ipsa molestias odio officiis provident similique totam. Magni nesciunt nisi
+                    ullam vel veniam. Ad alias asperiores assumenda culpa deleniti dolorem doloremque dolores,
+                    ducimus ea eaque esse eveniet expedita iste labore maxime modi nam nobis officiis placeat quae
+                    quam quasi quibusdam quidem quis quisquam tempora tempore ut! Nemo quae reiciendis temporibus.
+                    Adipisci excepturi ipsum quae reprehenderit voluptate? Magnam, odio, veniam.
+                </div>
+            </main>
+        );
+    }
+}
+
+export default Main;
