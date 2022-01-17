@@ -1,8 +1,10 @@
 import React from 'react';
-import "./Home.css";
 import Header from "../header/Header";
 import Main from "../main/Main";
 import Footer from "../footer/Footer";
+import PayContent from "../content/PayContent";
+
+import "./Home.css";
 
 class Home extends React.Component {
 
@@ -10,13 +12,12 @@ class Home extends React.Component {
         super(props);
         this.handleButtonClick = this.handleButtonClick.bind(this);
         this.state = {
-            isHidden: false
+            content: <PayContent handleButtonClick={this.handleButtonClick}/>
         }
     }
 
     handleButtonClick(content) {
-        this.setState(prevState => ({
-            isHidden: !prevState.isHidden,
+        this.setState((state) => ({
             content: content
         }));
     }
@@ -24,9 +25,9 @@ class Home extends React.Component {
     render() {
         return (
             <div className="home">
-                <Header handleButtonClick={this.handleButtonClick}/>
-                <Main isHidden={this.state.isHidden}
-                      content={this.state.content}
+                <Header content={this.state.content}
+                        handleButtonClick={this.handleButtonClick}/>
+                <Main content={this.state.content}
                       handleButtonClick={this.handleButtonClick}/>
                 <Footer/>
             </div>

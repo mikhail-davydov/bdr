@@ -1,28 +1,23 @@
 import React from "react";
 import User from "../user/User";
+import UserIcon from "../user/user.svg";
+import PayContent from "../content/PayContent";
 
 import "../button/Button.css";
 
 import "./Header.css";
 import "./__menu/HeaderMenu.css";
-import UserIcon from "../user/user.svg";
 
 class Header extends React.Component {
-
-    // constructor(props) {
-    //     super(props);
-    //     this.handleClick = this.handleClick.bind(this);
-    // }
 
     handleClick(content) {
         this.props.handleButtonClick(content);
     }
 
     render() {
-        // let user = "User Account";
         let user = <img src={UserIcon} alt="User" className="user__img"/>;
         let categories = "Categories";
-        let payItems = "Pay items";
+        let payItems = <PayContent handleButtonClick={this.props.handleButtonClick}/>;
 
         return (
             <header className="header">
@@ -31,13 +26,13 @@ class Header extends React.Component {
                 </button>
                 <ul className="header__menu">
                     <li className="header__menu-item">
-                        <button className="button" type="button" onClick={this.handleClick.bind(this, categories)}>
-                            Категории
+                        <button className="button" type="button" onClick={this.handleClick.bind(this, payItems)}>
+                            Приход/Расход
                         </button>
                     </li>
                     <li className="header__menu-item">
-                        <button className="button" type="button" onClick={this.handleClick.bind(this, payItems)}>
-                            Приход/Расход
+                        <button className="button" type="button" onClick={this.handleClick.bind(this, categories)}>
+                            Категории
                         </button>
                     </li>
                 </ul>
