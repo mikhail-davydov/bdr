@@ -51,9 +51,7 @@ class CategoryContent extends React.Component {
                         <label>
                             Родительская Категория:
                             <select name="parentName" defaultValue="">
-                                {/*<option value="" selected/>*/}
                                 {options}
-                                {/*<option value="second">Second Value</option>*/}
                             </select>
                         </label>
                     </li>
