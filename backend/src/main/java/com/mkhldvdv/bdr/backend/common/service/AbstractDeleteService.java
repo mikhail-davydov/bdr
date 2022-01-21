@@ -1,14 +1,14 @@
 package com.mkhldvdv.bdr.backend.common.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import com.google.common.collect.Lists;
 import com.mkhldvdv.bdr.backend.common.Constants;
 import com.mkhldvdv.bdr.backend.common.item.MongoItem;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.mongodb.repository.MongoRepository;
-
-import java.util.List;
-import java.util.Optional;
 
 /**
  * Logical remove by default. For physical removal, methods must be overridden

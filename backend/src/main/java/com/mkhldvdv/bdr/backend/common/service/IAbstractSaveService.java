@@ -1,8 +1,8 @@
 package com.mkhldvdv.bdr.backend.common.service;
 
-import com.mkhldvdv.bdr.backend.common.item.MongoItem;
-
 import java.util.List;
+
+import com.mkhldvdv.bdr.backend.common.item.MongoItem;
 
 public interface IAbstractSaveService<I extends MongoItem> {
 

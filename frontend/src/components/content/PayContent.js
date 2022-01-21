@@ -19,14 +19,20 @@ class PayContent extends React.Component {
     render() {
         return (
             <form className="pay-form">
-                <label>
-                    Name:
-                    <input type="text" name="name"/>
-                </label>
-                <Button buttonClass={this.state.buttonClass}
-                        handleClick={this.handleClick.bind(this, this.state.clicked)}
-                        buttonValue={this.state.clickMe}
-                />
+                <ul className="pay-form__items">
+                    <li className="category-form__item">
+                        <label>
+                            Name:
+                            <input type="text" name="name"/>
+                        </label>
+                    </li>
+                    <li className="category-form__item">
+                        <Button buttonClass={this.state.buttonClass}
+                                handleClick={this.handleClick.bind(this, this.state.clicked)}
+                                buttonValue={this.state.clickMe}
+                        />
+                    </li>
+                </ul>
             </form>
         );
     }

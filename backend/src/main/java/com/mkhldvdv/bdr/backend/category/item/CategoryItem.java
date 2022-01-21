@@ -1,5 +1,8 @@
 package com.mkhldvdv.bdr.backend.category.item;
 
+import java.util.UUID;
+import javax.validation.constraints.NotBlank;
+
 import com.mkhldvdv.bdr.backend.common.item.MongoItem;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,9 +11,6 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.MongoId;
-
-import javax.validation.constraints.NotBlank;
-import java.util.UUID;
 
 import static com.mkhldvdv.bdr.backend.common.Constants.CATEGORY;
 import static com.mkhldvdv.bdr.backend.common.Constants.ITEM_ID_TEMPLATE;

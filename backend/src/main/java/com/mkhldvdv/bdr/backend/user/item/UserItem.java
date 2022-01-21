@@ -1,5 +1,9 @@
 package com.mkhldvdv.bdr.backend.user.item;
 
+import java.util.UUID;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+
 import com.mkhldvdv.bdr.backend.common.item.MongoItem;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,10 +13,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
-
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
-import java.util.UUID;
 
 import static com.mkhldvdv.bdr.backend.common.Constants.ITEM_ID_TEMPLATE;
 import static com.mkhldvdv.bdr.backend.common.Constants.USER;

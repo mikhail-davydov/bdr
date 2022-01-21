@@ -1,10 +1,10 @@
 package com.mkhldvdv.bdr.backend.data.dao;
 
-import com.mkhldvdv.bdr.backend.data.item.DataItem;
-import org.springframework.data.mongodb.repository.MongoRepository;
-
 import java.util.Date;
 import java.util.List;
+
+import com.mkhldvdv.bdr.backend.data.item.DataItem;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 public interface DataRepository extends MongoRepository<DataItem, String> {
 

@@ -1,5 +1,7 @@
 package com.mkhldvdv.bdr.backend.common.api;
 
+import java.util.List;
+
 import com.mkhldvdv.bdr.backend.common.item.MongoItem;
 import com.mkhldvdv.bdr.backend.common.item.MongoItemList;
 import com.mkhldvdv.bdr.backend.common.service.IAbstractFindService;
@@ -8,8 +10,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-
-import java.util.List;
 
 import static com.mkhldvdv.bdr.backend.common.Constants.LOG_ITEM_ID_TEMPLATE;
 import static com.mkhldvdv.bdr.backend.common.Constants.LOG_ITEM_LIST_TEMPLATE;
@@ -27,8 +27,17 @@ public abstract class AbstractFindController<I extends MongoItem, IL extends Mon
     }
 
     @GetMapping(path = "/list")
-    public List<I> findItemList(@RequestBody IL itemIdList) {
+    public List<I> findItemList(@RequestBody(required = false) IL itemIdList) {
         log.info(LOG_ITEM_LIST_TEMPLATE, itemIdList);
+
+        if (exists(itemIdList)) {
+            return service.findAll();
+        }
+
         return service.findAllById(itemIdList.ids());
+    }
+
+    private boolean exists(IL itemIdList) {
+        return null == itemIdList || null == itemIdList.ids() || itemIdList.ids().isEmpty();
     }
 }

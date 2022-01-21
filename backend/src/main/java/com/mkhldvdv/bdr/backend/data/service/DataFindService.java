@@ -1,14 +1,15 @@
 package com.mkhldvdv.bdr.backend.data.service;
 
+import java.util.Date;
+import java.util.List;
+
 import com.mkhldvdv.bdr.backend.common.service.AbstractFindService;
 import com.mkhldvdv.bdr.backend.data.dao.DataRepository;
 import com.mkhldvdv.bdr.backend.data.item.DataItem;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.List;
-
+import static com.mkhldvdv.bdr.backend.common.Constants.DATA;
 import static com.mkhldvdv.bdr.backend.common.Constants.NOT_DELETED;
 
 @Service
@@ -41,4 +42,8 @@ public class DataFindService extends AbstractFindService<DataItem, DataRepositor
         return dataRepository.findAllByUserIdAndCategoryIdAndCreatedAtBetweenAndDeleted(userId, categoryId, startDate, enddate, NOT_DELETED);
     }
 
+    @Override
+    public List<DataItem> findAll() {
+        return findAll(DATA);
+    }
 }

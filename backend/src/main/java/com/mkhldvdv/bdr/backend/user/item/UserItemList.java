@@ -1,10 +1,10 @@
 package com.mkhldvdv.bdr.backend.user.item;
 
+import java.util.List;
+
 import com.mkhldvdv.bdr.backend.common.item.MongoItemList;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-
-import java.util.List;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

@@ -1,5 +1,11 @@
 package com.mkhldvdv.bdr.backend.data.item;
 
+import java.math.BigDecimal;
+import java.util.Date;
+import java.util.UUID;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+
 import com.mkhldvdv.bdr.backend.common.item.MongoItem;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,12 +15,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.FieldType;
 import org.springframework.data.mongodb.core.mapping.MongoId;
-
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
-import java.util.Date;
-import java.util.UUID;
 
 import static com.mkhldvdv.bdr.backend.common.Constants.DATA;
 import static com.mkhldvdv.bdr.backend.common.Constants.ITEM_ID_TEMPLATE;
