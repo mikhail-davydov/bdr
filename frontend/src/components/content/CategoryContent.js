@@ -13,29 +13,40 @@ class CategoryContent extends React.Component {
         }
     }
 
+    componentDidMount() {
+        const headers = {
+            "Accept": "application/json",
+            "Access-Control-Allow-Origin": "*"
+        };
+        fetch(
+            "http://localhost:8080/api/category/list",
+            {
+                // mode: "no-cors",
+                headers
+            }
+        )
+            .then(response => {
+                console.log("response: ", response);
+                response.json()
+                    .then(data => {
+                        console.log("categories: ", data);
+                        this.setState({
+                            categories: data
+                        });
+                    })
+            })
+            .catch(error => console.error(error));
+    }
+
     handleClick(content) {
         this.props.handleButtonClick(content);
     }
 
     render() {
-        const headers = {"Accept": "application/json"}
-        fetch(
-            "http://localhost:8080/api/category/list",
-            {
-                mode: "no-cors",
-                headers
-            }
-        )
-            .then(response => response.json())
-            .then(data => this.setState({
-                categories: data
-            }))
-            .catch(error => console.error(error));
-
         console.log("categories: ", this.state.categories);
 
         let options = this.state.categories.map((category) =>
-            <option value={category.categoryId}>{category.categoryDescription}</option>
+            <option key={category.categoryId} value={category.categoryId}>{category.categoryDescription}</option>
         );
 
         return (
