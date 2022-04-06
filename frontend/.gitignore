@@ -31,3 +31,4 @@ yarn-debug.log*
 yarn-error.log*
 /src/bkp/
 /public/index.html.bkp
+/package-lock.json
