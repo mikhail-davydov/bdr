@@ -1,13 +1,12 @@
 import {Component} from "react";
+import Header from "./component/header/Header";
 
 class App extends Component {
 
     render() {
         return (
             <div className="app">
-                <header className="header">
-                    header here!
-                </header>
+                <Header/>
                 <nav className="nav">
                     side navigation here!
                 </nav>
@@ -18,7 +17,7 @@ class App extends Component {
                     footer here!
                 </footer>
             </div>
-        );
+        )
     }
 
 }
