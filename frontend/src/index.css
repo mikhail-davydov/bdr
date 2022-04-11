@@ -1,5 +1,13 @@
 @import "reset.css";
 
+:root {
+  --white: #ffffff;
+  --light-grey: #f9f9f9;
+  --middle-grey: #ebebeb;
+  --dark-grey: #606060;
+  --black: #000000;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
