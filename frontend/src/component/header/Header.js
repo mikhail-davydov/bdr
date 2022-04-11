@@ -1,14 +1,14 @@
 import {Component} from "react";
-import "./header.css"
+import User from "../user/User";
+
+import "./Header.css";
 
 class Header extends Component {
 
     render() {
         return (
             <header className="header">
-                <div className="user-container">
-                    user here
-                </div>
+                <User/>
                 <div className="companies-container">
                     companies here
                 </div>
