@@ -1,0 +1,21 @@
+.user-container {
+    background-color: #606060;
+    padding: 0.5vw;
+    width: 5vw;
+    height: 5vw;
+}
+
+.user {
+    height: 100%;
+    border-radius: 50%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user__user-icon {
+    width: 50%;
+    height: 50%;
+}
+
