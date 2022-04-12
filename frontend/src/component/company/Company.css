@@ -1,0 +1,28 @@
+.company-container {
+    background-color: var(--white);
+    padding-right: 1vw;
+    height: 5vw;
+}
+
+.company {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.company__text {
+    font-size: 2vw;
+    color: var(--dark-grey);
+}
+
+.chevron {
+    width: 1vw;
+    height: 1vw;
+    border-color: var(--dark-grey);
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    /*transform: rotate(45deg);*/
+    /*margin-top: 50%;*/
+    margin-right: 1vw;
+}

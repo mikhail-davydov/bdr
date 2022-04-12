@@ -1,4 +1,6 @@
 import {Component} from "react";
+import Button from "../button/Button";
+import Company from "../company/Company";
 import User from "../user/User";
 
 import "./Header.css";
@@ -6,12 +8,12 @@ import "./Header.css";
 class Header extends Component {
 
     render() {
+        let userContent = <User/>;
+        let companyContent = <Company/>;
         return (
             <header className="header">
-                <User/>
-                <div className="companies-container">
-                    companies here
-                </div>
+                <Button content={userContent}/>
+                <Button content={companyContent}/>
             </header>
         )
     }

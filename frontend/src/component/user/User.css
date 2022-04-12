@@ -8,7 +8,7 @@
 .user {
     height: 100%;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: var(--white);
     display: flex;
     align-items: center;
     justify-content: center;
