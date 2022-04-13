@@ -4,3 +4,24 @@
     align-items: center;
     justify-content: space-between;
 }
+
+/* companies list */
+.header__list {
+    visibility: hidden;
+    position: absolute;
+    top: 7vw;
+    right: 0;
+
+}
+
+.header__list-item {
+    background-color: var(--white);
+    height: 2.5vw;
+    font-size: 2vw;
+    color: var(--dark-grey);
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.visible {
+    visibility: visible;
+}
