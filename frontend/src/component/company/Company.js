@@ -8,7 +8,6 @@ class Company extends Component {
         return (
             <div className="company-container">
                 <div className="company">
-                    <div className="chevron"></div>
                     <div className="company__text">
                         OOO ROMASHKA
                     </div>
