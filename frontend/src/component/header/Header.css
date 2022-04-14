@@ -9,16 +9,18 @@
 .header__list {
     visibility: hidden;
     position: absolute;
-    border: 1px solid var(--dark-grey);
+    background-color: var(--white);
+    /*border: 1px solid var(--dark-grey);*/
+    padding-right: 1vw;
+    padding-left: 1vw;
     top: 5vw;
     right: 0;
 
 }
 
 .header__list-item {
-    background-color: var(--white);
-    height: 2.5vw;
-    /*font-size: 2vw;*/
+    height: 3vw;
+    font-size: 2vw;
     color: var(--dark-grey);
 }
 
