@@ -1,0 +1,17 @@
+.company-container {
+    background-color: var(--white);
+    padding-right: 1vw;
+    height: 5vw;
+}
+
+.company {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.company__text {
+    font-size: 2vw;
+    color: var(--dark-grey);
+}
