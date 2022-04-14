@@ -9,7 +9,8 @@
 .header__list {
     visibility: hidden;
     position: absolute;
-    top: 7vw;
+    border: 1px solid var(--dark-grey);
+    top: 5vw;
     right: 0;
 
 }
@@ -17,9 +18,8 @@
 .header__list-item {
     background-color: var(--white);
     height: 2.5vw;
-    font-size: 2vw;
+    /*font-size: 2vw;*/
     color: var(--dark-grey);
-    border-bottom: 1px solid var(--dark-grey);
 }
 
 .visible {
