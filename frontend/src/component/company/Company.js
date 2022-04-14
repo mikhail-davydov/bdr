@@ -13,7 +13,7 @@ class Company extends Component {
             <div className="company-container">
                 <div className={className}>
                     <div className="company__text">
-                        OOO ROMASHKA
+                        {this.props.visibleCompany}
                     </div>
                 </div>
             </div>
