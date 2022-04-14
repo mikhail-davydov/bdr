@@ -6,6 +6,7 @@
     border-width: 0 0.2vw 0.2vw 0;
     border-style: solid;
     border-color: var(--dark-grey);
+    transition: transform 100ms;
 }
 
 .chevron-left::before {

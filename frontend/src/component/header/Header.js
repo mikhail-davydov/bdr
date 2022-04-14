@@ -9,46 +9,73 @@ class Header extends Component {
 
     constructor(props) {
         super(props);
+        this.clickCompanyButton = this.clickCompanyButton.bind(this);
+        this.clickCompanyItem = this.clickCompanyItem.bind(this);
         this.state = {
             visible: false,
-            clickButton: this.onClick.bind(this),
+            companies: [
+                {
+                    id: 0, name: "create company", isVisible: true,
+                }
+            ]
         }
     }
 
-    onClick() {
-        console.log("button clicked");
-        this.setState({
-            visible: !this.state.visible
-        })
-    }
-
     render() {
-        console.log("Visible: ", this.state.visible);
         let userContent = <User/>;
-        let companyContent = <Company chevronUp={this.state.visible}/>;
 
-        //todo: mock fetch list
-        let companies = [
-            {
-                id: 1, name: "Company 1", isDefault: false,
-            }, {
-                id: 2, name: "Company 2", isDefault: true,
-            }, {
-                id: 3, name: "OOO ROMASHKA", isDefault: false,
-            },
-        ];
-        let listItems = companies.map((company) => <li className="header__list-item" key={company.id}>
-            {company.name}
-        </li>);
+        let visibleCompany = this.state.companies.find(company => company.isVisible);
+        let companyContent = <Company visibleCompany={visibleCompany.name} chevronUp={this.state.visible}/>;
+
+        let companies = this.state.companies
+            .filter(company => !company.isVisible)
+            .map((company) =>
+                <li className="header__list-item"
+                    key={company.id}
+                    onClick={(e) => this.clickCompanyItem(company.id, this.state.companies, e)}>
+                    {company.name}
+                </li>);
         let listClassName = this.state.visible ? "header__list visible" : "header__list";
 
         return (
             <header className="header">
                 <Button content={userContent}/>
-                <Button content={companyContent} onClick={this.state.clickButton}/>
-                <ul className={listClassName}>{listItems}</ul>
+                <Button content={companyContent} onClick={this.clickCompanyButton}/>
+                <ul className={listClassName}>{companies}</ul>
             </header>
         )
+    }
+
+    clickCompanyItem(key, companiesList) {
+        companiesList.forEach(company => {
+            company.isVisible = (company.id === key);
+        });
+
+        this.setState({
+            companies: companiesList,
+            visible: false
+        });
+    }
+
+    clickCompanyButton() {
+        this.setState({
+            visible: !this.state.visible
+        })
+    }
+
+    componentDidMount() {
+        this.setState({
+            //todo: fetch list from db
+            companies: [
+                {
+                    id: 1, name: "Company 1", isVisible: false,
+                }, {
+                    id: 2, name: "Company 2", isVisible: false,
+                }, {
+                    id: 3, name: "OOO ROMASHKA", isVisible: true,
+                },
+            ]
+        })
     }
 
 }
