@@ -1,0 +1,17 @@
+.user-settings__item {
+    height: 3vw;
+    min-width: 15vw;
+    border: 1px solid var(--white);
+    color: var(--dark-grey);
+    padding-right: 1vw;
+    padding-left: 1vw;
+    display: flex;
+    align-items: center;
+    transition: background-color 250ms, border 250ms;
+}
+
+.user-settings__item:hover {
+    background-color: var(--middle-grey);
+    border-right: 1px solid var(--black);
+    cursor: pointer;
+}

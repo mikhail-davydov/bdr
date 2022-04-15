@@ -1,0 +1,8 @@
+.user-settings {
+    visibility: hidden;
+    position: absolute;
+    background-color: var(--white);
+    border-top: 1px solid var(--dark-grey);
+    top: 5vw;
+    left: 0;
+}
