@@ -1,4 +1,4 @@
-.chevron::before {
+.chevron::after {
     visibility: hidden;
     content: "";
     width: 0.5vw;
@@ -6,25 +6,24 @@
     border-width: 0 0.2vw 0.2vw 0;
     border-style: solid;
     border-color: var(--dark-grey);
-    transition: transform 100ms;
 }
 
-.chevron-left::before {
+.chevron-left::after {
     visibility: visible;
-    transform: translateX(-100%) translateY(-5%) rotate(135deg);
+    transform: translateX(100%) translateY(-5%) rotate(135deg);
 }
 
-.chevron-down::before {
+.chevron-down::after {
     visibility: visible;
-    transform: translateX(-100%) translateY(-30%) rotate(45deg);
+    transform: translateX(100%) translateY(-30%) rotate(45deg);
 }
 
-.chevron-right::before {
+.chevron-right::after {
     visibility: visible;
-    transform: translateX(-100%) translateY(-5%) rotate(-45deg);
+    transform: translateX(100%) translateY(-5%) rotate(-45deg);
 }
 
-.chevron-up::before {
+.chevron-up::after {
     visibility: visible;
-    transform: translateX(-100%) translateY(20%) rotate(-135deg);
+    transform: translateX(100%) translateY(20%) rotate(-135deg);
 }

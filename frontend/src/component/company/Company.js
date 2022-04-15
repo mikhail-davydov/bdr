@@ -6,6 +6,7 @@ import "../chevron/Chevron.css";
 class Company extends Component {
 
     render() {
+        // let className = "company";
         let className = this.props.chevronUp ?
             "company chevron chevron-up" :
             "company chevron chevron-down";

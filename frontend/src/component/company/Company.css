@@ -1,14 +1,15 @@
 .company-container {
     background-color: var(--white);
-    padding-right: 1vw;
+    padding-right: 2vw;
     height: 5vw;
+    min-width: 15vw;
 }
 
 .company {
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: right;
 }
 
 .company__text {
