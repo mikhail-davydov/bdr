@@ -1,5 +1,7 @@
 import {Component} from "react";
 import Button from "../button/Button";
+import CompanyListItem from "../company/__list-item/CompanyListItem";
+import CompanyList from "../company/__list/CompanyList";
 import Company from "../company/Company";
 import User from "../user/User";
 
@@ -30,18 +32,19 @@ class Header extends Component {
         let companies = this.state.companies
             .filter(company => !company.isVisible)
             .map((company) =>
-                <li className="header__list-item"
-                    key={company.id}
-                    onClick={(e) => this.clickCompanyItem(company.id, this.state.companies, e)}>
-                    {company.name}
-                </li>);
-        let listClassName = this.state.visible ? "header__list visible" : "header__list";
+                <CompanyListItem key={company.id}
+                                 onClick={(e) => this.clickCompanyItem(company.id, this.state.companies, e)}
+                                 content={company.name}
+
+                />
+            );
+        let companiesClassName = this.state.visible ? "company__list visible" : "company__list";
 
         return (
             <header className="header">
                 <Button content={userContent}/>
                 <Button content={companyContent} onClick={this.clickCompanyButton}/>
-                <ul className={listClassName}>{companies}</ul>
+                <CompanyList className={companiesClassName} content={companies}/>
             </header>
         )
     }

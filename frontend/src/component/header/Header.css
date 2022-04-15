@@ -1,36 +1,8 @@
+@import "../common/Common.css";
+
 .header {
     border-bottom: 1px solid var(--dark-grey);
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-/* companies list */
-.header__list {
-    visibility: hidden;
-    position: absolute;
-    background-color: var(--white);
-    top: 5vw;
-    right: 0;
-}
-
-.header__list-item {
-    height: 3vw;
-    border: 1px solid var(--white);
-    color: var(--dark-grey);
-    padding-right: 1vw;
-    padding-left: 1vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 250ms, border 250ms;
-}
-
-.header__list-item:hover {
-    background-color: var(--middle-grey);
-    border: 1px solid var(--black);
-}
-
-.visible {
-    visibility: visible;
 }

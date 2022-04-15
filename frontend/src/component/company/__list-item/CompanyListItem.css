@@ -1,0 +1,17 @@
+.company__list-item {
+    height: 3vw;
+    border: 1px solid var(--white);
+    color: var(--dark-grey);
+    padding-right: 1vw;
+    padding-left: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 250ms, border 250ms;
+}
+
+.company__list-item:hover {
+    background-color: var(--middle-grey);
+    border-left: 1px solid var(--black);
+    cursor: pointer;
+}
