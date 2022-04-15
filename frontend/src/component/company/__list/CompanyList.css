@@ -1,0 +1,8 @@
+.company__list {
+    visibility: hidden;
+    position: absolute;
+    background-color: var(--white);
+    border-top: 1px solid var(--dark-grey);
+    top: 5vw;
+    right: 0;
+}
