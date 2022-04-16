@@ -76,7 +76,8 @@ class Header extends Component {
 
     clickUserButton() {
         this.setState({
-            userSettingsVisible: !this.state.userSettingsVisible
+            userSettingsVisible: !this.state.userSettingsVisible,
+            companiesVisible: false
         })
     }
 
@@ -109,7 +110,8 @@ class Header extends Component {
 
     clickCompanyButton() {
         this.setState({
-            companiesVisible: !this.state.companiesVisible
+            companiesVisible: !this.state.companiesVisible,
+            userSettingsVisible: false
         })
     }
 

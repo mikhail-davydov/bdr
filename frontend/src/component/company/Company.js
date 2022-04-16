@@ -6,14 +6,14 @@ import "../chevron/Chevron.css";
 class Company extends Component {
 
     render() {
-        // let className = "company";
-        let className = this.props.chevronUp ?
-            "company chevron chevron-up" :
-            "company chevron chevron-down";
+        let companyClassName = "company";
+        let companyTextClassName = this.props.chevronUp ?
+            "company__text chevron chevron-up" :
+            "company__text chevron chevron-down";
         return (
             <div className="company-container">
-                <div className={className}>
-                    <div className="company__text">
+                <div className={companyClassName}>
+                    <div className={companyTextClassName}>
                         {this.props.visibleCompany}
                     </div>
                 </div>
