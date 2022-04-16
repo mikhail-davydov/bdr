@@ -15,7 +15,7 @@ class User extends Component {
             </svg>;
 
         return (
-            <div className="user-container">
+            <div className="user-container" onClick={this.props.onClick}>
                 <div className="user">
                     <Icon class={userIconClass} content={iconContent}/>
                 </div>

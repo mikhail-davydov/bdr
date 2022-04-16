@@ -39,7 +39,6 @@ class Header extends Component {
     render() {
         let userContent = this.getUserContent();
         let userSettings = this.getUserSettings();
-        let userSettingsClassName = this.getUserSettingsClassName();
 
         let companyContent = this.getCompanyContent();
         let companies = this.getCompaniesList();
@@ -47,8 +46,8 @@ class Header extends Component {
 
         return (
             <header className="header">
-                <Button content={userContent} onClick={this.clickUserButton}/>
-                <UserSettings className={userSettingsClassName} content={userSettings}/>
+                <Button content={userContent}/>
+                <UserSettings content={userSettings} isVisible={this.state.userSettingsVisible}/>
                 <Button content={companyContent} onClick={this.clickCompanyButton}/>
                 <CompanyList className={companiesClassName} content={companies}/>
             </header>
@@ -56,11 +55,7 @@ class Header extends Component {
     }
 
     getUserContent() {
-        return <User/>;
-    }
-
-    getUserSettingsClassName() {
-        return this.state.userSettingsVisible ? "user-settings visible" : "user-settings";
+        return <User onClick={this.clickUserButton}/>;
     }
 
     getUserSettings() {
