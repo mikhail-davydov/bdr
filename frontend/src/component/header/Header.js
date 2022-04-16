@@ -14,7 +14,7 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.clickUserButton = this.clickUserButton.bind(this);
-        this.clickUserSettingItem = this.clickUserSettingItem.bind(this);
+        this.clickUserSettingsItem = this.clickUserSettingsItem.bind(this);
         this.clickCompanyButton = this.clickCompanyButton.bind(this);
         this.clickCompanyItem = this.clickCompanyItem.bind(this);
         this.state = {
@@ -42,14 +42,13 @@ class Header extends Component {
 
         let companyContent = this.getCompanyContent();
         let companies = this.getCompaniesList();
-        let companiesClassName = this.getCompaniesClassName();
 
         return (
             <header className="header">
                 <Button content={userContent}/>
                 <UserSettings content={userSettings} isVisible={this.state.userSettingsVisible}/>
-                <Button content={companyContent} onClick={this.clickCompanyButton}/>
-                <CompanyList className={companiesClassName} content={companies}/>
+                <Button content={companyContent}/>
+                <CompanyList content={companies} isVisible={this.state.companiesVisible}/>
             </header>
         )
     }
@@ -62,7 +61,7 @@ class Header extends Component {
         return this.state.userSettings
             .map((setting) =>
                 <UserSettingsItem key={setting.id}
-                                  onClick={this.clickUserSettingItem}
+                                  onClick={this.clickUserSettingsItem}
                                   content={setting.name}
 
                 />
@@ -76,14 +75,10 @@ class Header extends Component {
         })
     }
 
-    clickUserSettingItem() {
+    clickUserSettingsItem() {
         this.setState({
             userSettingsVisible: false
         });
-    }
-
-    getCompaniesClassName() {
-        return this.state.companiesVisible ? "company__list visible" : "company__list";
     }
 
     getCompaniesList() {
@@ -93,14 +88,16 @@ class Header extends Component {
                 <CompanyListItem key={company.id}
                                  onClick={(e) => this.clickCompanyItem(company.id, this.state.companies, e)}
                                  content={company.name}
-
                 />
             );
     }
 
     getCompanyContent() {
         let visibleCompany = this.state.companies.find(company => company.isVisible);
-        return <Company visibleCompany={visibleCompany.name} chevronUp={this.state.companiesVisible}/>;
+        return <Company visibleCompany={visibleCompany.name}
+                        chevronUp={this.state.companiesVisible}
+                        onClick={this.clickCompanyButton}
+        />;
     }
 
     clickCompanyButton() {

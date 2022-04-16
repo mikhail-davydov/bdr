@@ -1,17 +1,15 @@
 import {Component} from "react";
 
-import "./Company.css";
 import "../chevron/Chevron.css";
+import "./Company.css";
 
 class Company extends Component {
 
     render() {
-        let companyClassName = "company";
-        let companyTextClassName = this.props.chevronUp ?
-            "company__text chevron chevron-up" :
-            "company__text chevron chevron-down";
+        let companyClassName = this.getCompanyClassName();
+        let companyTextClassName = this.getCompanyTextClassName();
         return (
-            <div className="company-container">
+            <div className="company-container" onClick={this.props.onClick}>
                 <div className={companyClassName}>
                     <div className={companyTextClassName}>
                         {this.props.visibleCompany}
@@ -19,6 +17,16 @@ class Company extends Component {
                 </div>
             </div>
         )
+    }
+
+    getCompanyTextClassName() {
+        return this.props.chevronUp ?
+            "company__text chevron chevron-up" :
+            "company__text chevron chevron-down";
+    }
+
+    getCompanyClassName() {
+        return "company";
     }
 
 }

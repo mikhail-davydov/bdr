@@ -5,11 +5,16 @@ import "./CompanyList.css";
 class CompanyList extends Component {
 
     render() {
+        let companyListClassName = this.getCompaniesClassName();
         return (
-            <ul className={this.props.className}>
+            <ul className={companyListClassName}>
                 {this.props.content}
             </ul>
         )
+    }
+
+    getCompaniesClassName() {
+        return this.props.isVisible ? "company__list visible" : "company__list";
     }
 
 }
