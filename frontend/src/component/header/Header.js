@@ -1,6 +1,5 @@
 import {Component} from "react";
 import Button from "../button/Button";
-import CompanyListItem from "../company/__list-item/CompanyListItem";
 import CompanyList from "../company/__list/CompanyList";
 import Company from "../company/Company";
 import User from "../user/User";
@@ -29,16 +28,18 @@ class Header extends Component {
 
     render() {
         let userContent = this.getUserContent();
-
         let companyContent = this.getCompanyContent();
-        let companies = this.getCompaniesList();
-
         return (
             <header className="header">
                 <Button content={userContent}/>
-                <UserSettings onClickItem={this.clickUserSettingsItem} isVisible={this.state.userSettingsVisible}/>
+                <UserSettings onClickItem={this.clickUserSettingsItem}
+                              isVisible={this.state.userSettingsVisible}
+                />
                 <Button content={companyContent}/>
-                <CompanyList content={companies} isVisible={this.state.companiesVisible}/>
+                <CompanyList onClickItem={this.clickCompanyItem}
+                             isVisible={this.state.companiesVisible}
+                             companies={this.state.companies}
+                />
             </header>
         )
     }
@@ -60,20 +61,8 @@ class Header extends Component {
         });
     }
 
-    getCompaniesList() {
-        return this.state.companies
-            .filter(company => !company.isVisible)
-            .map((company) =>
-                <CompanyListItem key={company.id}
-                                 onClick={(e) => this.clickCompanyItem(company.id, this.state.companies, e)}
-                                 content={company.name}
-                />
-            );
-    }
-
     getCompanyContent() {
-        let visibleCompany = this.state.companies.find(company => company.isVisible);
-        return <Company visibleCompany={visibleCompany.name}
+        return <Company companies={this.state.companies}
                         chevronUp={this.state.companiesVisible}
                         onClick={this.clickCompanyButton}
         />;
@@ -98,18 +87,24 @@ class Header extends Component {
     }
 
     componentDidMount() {
+        //todo: fetch list from db
+        let companiesList = [
+            {
+                id: 1, name: "Компания 1", isVisible: false,
+            }, {
+                id: 2, name: "Другая Компания", isVisible: false,
+            }, {
+                id: 3, name: "ООО Ромашка", isVisible: true,
+            },
+        ];
+
+        if (!companiesList.length) {
+            return;
+        }
+
         this.setState({
-            //todo: fetch list from db
-            companies: [
-                {
-                    id: 1, name: "Компания 1", isVisible: false,
-                }, {
-                    id: 2, name: "Другая Компания", isVisible: false,
-                }, {
-                    id: 3, name: "ООО Ромашка", isVisible: true,
-                },
-            ]
-        })
+            companies: companiesList
+        });
     }
 
 }
