@@ -4,7 +4,6 @@ import CompanyListItem from "../company/__list-item/CompanyListItem";
 import CompanyList from "../company/__list/CompanyList";
 import Company from "../company/Company";
 import User from "../user/User";
-import {UserSettingsItem} from "../user/user-settings-item/UserSettingsItem";
 import {UserSettings} from "../user/user-settings/UserSettings";
 
 import "./Header.css";
@@ -20,14 +19,6 @@ class Header extends Component {
         this.state = {
             userSettingsVisible: false,
             companiesVisible: false,
-            userSettings: [
-                {
-                    id: 1, name: "Настройки"
-                },
-                {
-                    id: 2, name: "Компании"
-                }
-            ],
             companies: [
                 {
                     id: 0, name: "Создать Компанию", isVisible: true,
@@ -38,7 +29,6 @@ class Header extends Component {
 
     render() {
         let userContent = this.getUserContent();
-        let userSettings = this.getUserSettings();
 
         let companyContent = this.getCompanyContent();
         let companies = this.getCompaniesList();
@@ -46,7 +36,7 @@ class Header extends Component {
         return (
             <header className="header">
                 <Button content={userContent}/>
-                <UserSettings content={userSettings} isVisible={this.state.userSettingsVisible}/>
+                <UserSettings onClickItem={this.clickUserSettingsItem} isVisible={this.state.userSettingsVisible}/>
                 <Button content={companyContent}/>
                 <CompanyList content={companies} isVisible={this.state.companiesVisible}/>
             </header>
@@ -55,17 +45,6 @@ class Header extends Component {
 
     getUserContent() {
         return <User onClick={this.clickUserButton}/>;
-    }
-
-    getUserSettings() {
-        return this.state.userSettings
-            .map((setting) =>
-                <UserSettingsItem key={setting.id}
-                                  onClick={this.clickUserSettingsItem}
-                                  content={setting.name}
-
-                />
-            );
     }
 
     clickUserButton() {
