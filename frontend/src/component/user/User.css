@@ -10,13 +10,10 @@
     height: 100%;
     border-radius: 50%;
     background-color: var(--white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .user__user-icon {
     width: 50%;
     height: 50%;
+    transform: translateX(50%) translateY(50%)
 }
-

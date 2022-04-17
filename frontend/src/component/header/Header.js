@@ -15,6 +15,7 @@ class Header extends Component {
         this.clickUserSettingsItem = this.clickUserSettingsItem.bind(this);
         this.clickCompanyButton = this.clickCompanyButton.bind(this);
         this.clickCompanyItem = this.clickCompanyItem.bind(this);
+        this.onBlur = this.onBlur.bind(this);
         this.state = {
             userSettingsVisible: false,
             companiesVisible: false,
@@ -31,27 +32,33 @@ class Header extends Component {
         let companyContent = this.getCompanyContent();
         return (
             <header className="header">
-                <Button content={userContent}/>
-                <UserSettings onClickItem={this.clickUserSettingsItem}
-                              isVisible={this.state.userSettingsVisible}
-                />
-                <Button content={companyContent}/>
-                <CompanyList onClickItem={this.clickCompanyItem}
-                             isVisible={this.state.companiesVisible}
-                             companies={this.state.companies}
-                />
+                <Button content={userContent} onBlur={this.onBlur}/>
+                <Button content={companyContent} onBlur={this.onBlur}/>
             </header>
         )
     }
 
+    onBlur() {
+        this.setState({
+            userSettingsVisible: false,
+            companiesVisible: false,
+        })
+    }
+
     getUserContent() {
-        return <User onClick={this.clickUserButton}/>;
+        return (
+            <div>
+                <User onClick={this.clickUserButton}/>
+                <UserSettings onClickItem={this.clickUserSettingsItem}
+                              isVisible={this.state.userSettingsVisible}
+                />
+            </div>
+        );
     }
 
     clickUserButton() {
         this.setState({
             userSettingsVisible: !this.state.userSettingsVisible,
-            companiesVisible: false
         })
     }
 
@@ -62,16 +69,23 @@ class Header extends Component {
     }
 
     getCompanyContent() {
-        return <Company companies={this.state.companies}
-                        chevronUp={this.state.companiesVisible}
-                        onClick={this.clickCompanyButton}
-        />;
+        return (
+            <div>
+                <Company companies={this.state.companies}
+                         chevronUp={this.state.companiesVisible}
+                         onClick={this.clickCompanyButton}
+                />
+                <CompanyList onClickItem={this.clickCompanyItem}
+                             isVisible={this.state.companiesVisible}
+                             companies={this.state.companies}
+                />
+            </div>
+        )
     }
 
     clickCompanyButton() {
         this.setState({
             companiesVisible: !this.state.companiesVisible,
-            userSettingsVisible: false
         })
     }
 

@@ -1,6 +1,7 @@
 .user-settings__item {
     height: 3vw;
     min-width: 15vw;
+    font-size: 1.5vw;
     border: 1px solid var(--white);
     color: var(--dark-grey);
     padding-right: 1vw;
