@@ -15,5 +15,5 @@
 .company__text {
     display: contents;
     font-size: 2vw;
-    color: var(--dark-grey);
+    color: var(--dark);
 }

@@ -2,7 +2,7 @@
     visibility: hidden;
     position: absolute;
     background-color: var(--white);
-    border-top: 1px solid var(--dark-grey);
+    border-top: 1px solid var(--middle-dark);
     top: 5vw;
     right: 0;
 }

@@ -3,7 +3,7 @@
     min-width: 15vw;
     font-size: 1.5vw;
     border: 1px solid var(--white);
-    color: var(--dark-grey);
+    color: var(--dark);
     padding-right: 1vw;
     padding-left: 1vw;
     display: flex;
@@ -12,7 +12,7 @@
 }
 
 .user-settings__item:hover {
-    background-color: var(--middle-grey);
+    background-color: var(--middle-light);
     border-right: 1px solid var(--black);
     cursor: pointer;
 }
