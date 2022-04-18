@@ -1,21 +1,18 @@
 import {Component} from "react";
+import {Footer} from "./component/footer/Footer";
 import Header from "./component/header/Header";
+
+import "./App.css";
+import {NavMainContainer} from "./component/nav-main-container/NavMainContainer";
 
 class App extends Component {
 
     render() {
         return (
-            <div className="app">
+            <div className="app-container">
                 <Header/>
-                <nav className="nav">
-                    side navigation here!
-                </nav>
-                <main className="main">
-                    main here!
-                </main>
-                <footer className="footer">
-                    footer here!
-                </footer>
+                <NavMainContainer/>
+                <Footer/>
             </div>
         )
     }

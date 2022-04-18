@@ -2,13 +2,19 @@
 
 :root {
     --white: #ffffff;
-    --light-grey: #f9f9f9;
-    --middle-grey: #ebebeb;
-    --dark-grey: #606060;
+    --light: #f9f9f9;
+    --middle-light: #ebebeb;
+    --middle-dark: #c0c0c0;
+    --dark: #606060;
     --black: #000000;
 }
 
+html {
+    height: 100%;
+}
+
 body {
+    height: 100%;
     margin: 0;
     font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }

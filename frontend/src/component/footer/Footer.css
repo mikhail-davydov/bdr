@@ -1,8 +1,7 @@
-@import "../common/Common.css";
-
-.header {
+.footer {
     flex-shrink: 0;
-    border-bottom: 1px solid var(--middle-dark);
+    height: 5vw;
+    border-top: 1px solid var(--middle-dark);
     display: flex;
     align-items: center;
     justify-content: space-between;
