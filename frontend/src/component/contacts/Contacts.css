@@ -1,0 +1,11 @@
+.contacts-container {
+    padding: 0 5vw;
+}
+
+.contacts__list {
+    display: flex;
+}
+
+.contacts__item {
+    padding: 2px;
+}
