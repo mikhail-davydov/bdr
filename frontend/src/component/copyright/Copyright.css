@@ -1,0 +1,14 @@
+.copyright-container {
+    padding: 0 5vw;
+}
+
+.copyright__link {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 1vw;
+}
+
+.copyright__link::before {
+    content: "©";
+    margin-right: 0.5vw;
+}

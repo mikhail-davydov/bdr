@@ -1,6 +1,6 @@
 .footer {
     flex-shrink: 0;
-    height: 5vw;
+    height: 2vw;
     border-top: 1px solid var(--middle-dark);
     display: flex;
     align-items: center;
