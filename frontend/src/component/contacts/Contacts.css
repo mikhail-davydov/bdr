@@ -3,8 +3,7 @@
 }
 
 .contacts__list {
-    height: 100%;
-    min-width: 15vw;
+    width: 15vw;
     display: flex;
 }
 

@@ -44,11 +44,13 @@ export class Contacts extends Component {
             //         <path className="cls-1"
             //               d={contact.content}/>
             //     </svg>;
-            return <li className="contacts__item" key={contact.key}>
-                <a className="contacts__link" href="#">
-                    <Icon class="contacts__item-icon" content={iconContent}/>
-                </a>
-            </li>
+            return (
+                <li className="contacts__item" key={contact.key}>
+                    <a className="contacts__link" href="#">
+                        <Icon class="contacts__item-icon" content={iconContent}/>
+                    </a>
+                </li>
+            )
         });
         return (
             <div className="contacts-container">
