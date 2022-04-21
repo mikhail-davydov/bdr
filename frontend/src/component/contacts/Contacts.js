@@ -1,5 +1,5 @@
 import {Component} from "react";
-import {email, phone, telegram, vk} from "../common/Constants";
+import {emailIcon, phoneIcon, telegramIcon, vkIcon} from "../common/Constants";
 
 import "./Contacts.css";
 
@@ -11,19 +11,19 @@ export class Contacts extends Component {
             contacts: [
                 {
                     key: 1,
-                    content: phone
+                    content: phoneIcon
                 },
                 {
                     key: 2,
-                    content: email
+                    content: emailIcon
                 },
                 {
                     key: 3,
-                    content: telegram
+                    content: telegramIcon
                 },
                 {
                     key: 4,
-                    content: vk
+                    content: vkIcon
                 },
             ]
         }
