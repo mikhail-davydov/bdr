@@ -1,13 +1,5 @@
 @import "reset.css";
-
-:root {
-    --white: #ffffff;
-    --light: #f9f9f9;
-    --middle-light: #ebebeb;
-    --middle-dark: #c0c0c0;
-    --dark: #606060;
-    --black: #000000;
-}
+@import "global.css";
 
 html {
     height: 100%;
