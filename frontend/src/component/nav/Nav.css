@@ -1,4 +1,57 @@
-.nav {
+.nav-container {
     width: 5vw;
     background-color: var(--light);
+}
+
+.nav__chevron-container {
+    height: 2vw;
+    display: flex;
+    padding-right: 0.5vw;
+    align-items: center;
+    justify-content: end;
+}
+
+.nav__chevron-container:hover {
+    cursor: pointer;
+}
+
+.nav__chevron-right {
+    width: 0.5vw;
+    height: 0.5vw;
+    border-width: 0 0.2vw 0.2vw 0;
+    border-style: solid;
+    border-color: var(--dark);
+    transform: rotate(-45deg);
+}
+
+.nav__list {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__item-container {
+    height: 10vw;
+    display: flex;
+    align-items: center;
+}
+
+.nav__item {
+    height: 5vw;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--light);
+    transition: background-color 250ms, border 250ms;
+}
+
+.nav__item:hover {
+    cursor: pointer;
+    background-color: var(--middle-light);
+    border: 1px solid var(--middle-dark);
+}
+
+.nav__item svg {
+    height: 60%;
+    width: 60%;
 }

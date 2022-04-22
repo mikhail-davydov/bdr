@@ -1,5 +1,5 @@
 import {Component} from "react";
-import {emailIcon, phoneIcon, telegramIcon, vkIcon} from "../common/Constants";
+import {emailIcon, phoneIcon, telegramIcon, vkIcon} from "./ContactIcons";
 
 import "./Contacts.css";
 
