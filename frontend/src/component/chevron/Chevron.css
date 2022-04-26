@@ -3,7 +3,7 @@
     content: "";
     width: 0.5vw;
     height: 0.5vw;
-    border-width: 0 0.2vw 0.2vw 0;
+    border-width: 0 0.12vw 0.12vw 0;
     border-style: solid;
     border-color: var(--dark);
 }
