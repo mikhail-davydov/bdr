@@ -1,7 +1,7 @@
 .company__list-item {
     height: 3vw;
-    min-width: 15vw;
-    font-size: 1.5vw;
+    min-width: 10vw;
+    font-size: 1vw;
     border: 1px solid var(--white);
     color: var(--dark);
     padding-right: 1vw;
