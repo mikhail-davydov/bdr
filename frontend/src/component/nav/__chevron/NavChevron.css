@@ -1,0 +1,27 @@
+.nav__chevron-container {
+    height: 2vw;
+    display: flex;
+    padding-right: 0.5vw;
+    align-items: center;
+    justify-content: end;
+}
+
+.nav__chevron-container:hover {
+    cursor: pointer;
+}
+
+.nav__chevron {
+    width: 0.5vw;
+    height: 0.5vw;
+    border-width: 0 0.12vw 0.12vw 0;
+    border-style: solid;
+    border-color: var(--dark);
+}
+
+.nav__chevron--right {
+    transform: rotate(-45deg);
+}
+
+.nav__chevron--left {
+    transform: rotate(135deg);
+}

@@ -14,30 +14,23 @@
 .contacts__item {
     height: 1.5vw;
     width: 1.5vw;
-    border-radius: 0.2vw;
-    background-color: var(--dark);
-    transition: background-color 250ms;
-}
-
-.contacts__item:hover {
-    background-color: var(--middle-dark);
-}
-
-.contacts__item:hover .icon {
-    fill: var(--middle-dark);
-}
-
-.contacts__item-round {
-    height: 100%;
-    width: 100%;
-    background-color: var(--white);
-    border-radius: 50%;
+    border: 1px solid var(--dark);
+    border-radius: 20%;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: border-color 250ms;
 }
 
-.contacts__item-round svg {
+.contacts__item:hover {
+    border-color: var(--middle-dark);
+}
+
+.contacts__item:hover.icon {
+    fill: var(--middle-dark);
+}
+
+.contacts__item svg {
     height: 80%;
     width: 80%;
 }

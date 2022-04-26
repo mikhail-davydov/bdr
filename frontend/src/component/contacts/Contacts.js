@@ -33,10 +33,8 @@ export class Contacts extends Component {
         let contacts = this.state.contacts.map(contact => {
             return (
                 <a className="contacts__link" href="#" key={contact.key}>
-                    <li className="contacts__item">
-                        <div className="contacts__item-round icon">
-                            {contact.content}
-                        </div>
+                    <li className="contacts__item icon">
+                        {contact.content}
                     </li>
                 </a>
             )
