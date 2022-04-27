@@ -9,7 +9,7 @@ export class Copyright extends Component {
             <div className="copyright-container">
                 <div className="copyright">
                     <a href="#" className="copyright__link">
-                        Мое Дело
+                        МоеДело
                     </a>
                 </div>
             </div>

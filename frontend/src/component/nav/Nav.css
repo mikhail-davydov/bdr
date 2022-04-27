@@ -6,3 +6,15 @@
 .nav-container.visible {
     min-width: 15vw;
 }
+
+.nav__chevron-container {
+    height: 2vw;
+    display: flex;
+    padding-right: 0.5vw;
+    align-items: center;
+    justify-content: end;
+}
+
+.nav__chevron-container:hover {
+    cursor: pointer;
+}

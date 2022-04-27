@@ -1,37 +1,33 @@
 import {Component} from "react";
+import {Chevron} from "../chevron/Chevron";
 
-import "../chevron/Chevron.css";
 import "./Company.css";
 
 class Company extends Component {
 
     render() {
         let visibleCompany = this.props.companies.find(company => company.isVisible);
-        let companyClassName = this.getCompanyClassName();
-        let companyTextClassName = this.getCompanyTextClassName();
         return (
             <div className="company-container" onClick={this.props.onClick}>
-                <div className={companyClassName}>
-                    <div className={companyTextClassName}>
+                <div className="company">
+                    <div className="company__text">
                         {visibleCompany.name}
+                    </div>
+                    <div className="company__chevron-container">
+                        <Chevron chevronDirectionClass={this.getChevronDirectionClass()}
+                                  isVisible={this.isChevronVisible()}/>
                     </div>
                 </div>
             </div>
         )
     }
 
-    getCompanyTextClassName() {
-        if (this.props.companies.length === 1) {
-            return "company__text";
-        }
-
-        return this.props.chevronUp ?
-            "company__text chevron chevron-up" :
-            "company__text chevron chevron-down";
+    isChevronVisible() {
+        return (this.props.companies.length !== 1);
     }
 
-    getCompanyClassName() {
-        return "company";
+    getChevronDirectionClass() {
+        return this.props.chevronUp ? "chevron--up" : "chevron--down";
     }
 
 }
