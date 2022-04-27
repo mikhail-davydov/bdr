@@ -7,7 +7,7 @@ import "./User.css";
 class User extends Component {
 
     render() {
-        let userIconClass = "user__user-icon";
+        let userIconClass = "user__icon";
         return (
             <div className="user-container" onClick={this.props.onClick}>
                 <div className="user">
