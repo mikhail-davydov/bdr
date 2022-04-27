@@ -1,5 +1,5 @@
 import {Component} from "react";
-import {NavChevron} from "./__chevron/NavChevron";
+import {Chevron} from "../chevron/Chevron";
 import {NavItem} from "./__item/NavItem";
 import {NavList} from "./__list/NavList";
 
@@ -29,7 +29,9 @@ export class Nav extends Component {
 
         return (
             <nav className={this.getNavContainerClassName()}>
-                <NavChevron onClick={this.onClick} visible={this.state.visible}/>
+                <div className="nav__chevron-container" onClick={this.onClick}>
+                    <Chevron chevronDirectionClass={this.getChevronDirectionClass()}/>
+                </div>
                 <NavList items={navItems}/>
             </nav>
         );
@@ -45,6 +47,10 @@ export class Nav extends Component {
         return (this.state.visible) ?
             "nav-container visible" :
             "nav-container";
+    }
+
+    getChevronDirectionClass() {
+        return (this.state.visible) ? "chevron--left" : "chevron--right";
     }
 
 }

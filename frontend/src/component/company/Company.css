@@ -1,6 +1,5 @@
 .company-container {
     background-color: var(--white);
-    padding-right: 2vw;
     height: 5vw;
     min-width: 15vw;
 }
@@ -13,7 +12,11 @@
 }
 
 .company__text {
-    display: contents;
     font-size: 1.5vw;
     color: var(--dark);
+}
+
+.company__chevron-container {
+    visibility: hidden;
+    margin: auto 1vw;
 }
