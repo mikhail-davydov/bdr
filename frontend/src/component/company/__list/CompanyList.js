@@ -20,7 +20,7 @@ class CompanyList extends Component {
             .filter(company => !company.isVisible)
             .map((company) =>
                 <CompanyListItem key={company.id}
-                                 onClick={(e) => this.props.onClickItem(company.id, this.props.companies, e)}
+                                 onClick={() => this.props.onClickItem(company.id, this.props.companies, company.name)}
                                  content={company.name}
                 />
             );

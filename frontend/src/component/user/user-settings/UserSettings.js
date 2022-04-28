@@ -20,11 +20,9 @@ export class UserSettings extends Component {
     }
 
     render() {
-        let className = this.getUserSettingsClassName();
-        let companies = this.getUserSettings();
         return (
-            <ul className={className}>
-                {companies}
+            <ul className={this.getUserSettingsClassName()}>
+                {this.getUserSettings()}
             </ul>
         )
     }

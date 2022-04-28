@@ -28,12 +28,10 @@ class Header extends Component {
     }
 
     render() {
-        let userContent = this.getUserContent();
-        let companyContent = this.getCompanyContent();
         return (
             <header className="header">
-                <Button content={userContent} onBlur={this.onBlur}/>
-                <Button content={companyContent} onBlur={this.onBlur}/>
+                <Button content={this.getUserContent()} onBlur={this.onBlur}/>
+                <Button content={this.getCompanyContent()} onBlur={this.onBlur}/>
             </header>
         )
     }
@@ -62,7 +60,8 @@ class Header extends Component {
         })
     }
 
-    clickUserSettingsItem() {
+    clickUserSettingsItem(content) {
+        this.props.setMainContent(content);
         this.setState({
             userSettingsVisible: false
         });
@@ -89,7 +88,9 @@ class Header extends Component {
         })
     }
 
-    clickCompanyItem(key, companiesList) {
+    clickCompanyItem(key, companiesList, content) {
+        this.props.setMainContent(content);
+
         companiesList.forEach(company => {
             company.isVisible = (company.id === key);
         });

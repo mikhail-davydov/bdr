@@ -24,7 +24,12 @@ export class Nav extends Component {
 
     render() {
         let navItems = this.state.menuItems.map(value =>
-            <NavItem icon={value.content} text={value.name} textVisible={this.state.visible} key={value.id}/>
+            <NavItem icon={value.content}
+                     text={value.name}
+                     textVisible={this.state.visible}
+                     setMainContent={this.props.setMainContent}
+                     key={value.id}
+            />
         );
 
         return (
