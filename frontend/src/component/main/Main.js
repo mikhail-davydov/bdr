@@ -7,7 +7,7 @@ export class Main extends Component {
     render() {
         return (
             <main className="main">
-                main here!
+                {this.props.mainContent}
             </main>
         )
     }
