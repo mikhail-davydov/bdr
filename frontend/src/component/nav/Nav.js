@@ -1,5 +1,9 @@
 import {Component} from "react";
+import {Analytics} from "../analytics/Analytics";
+import {Category} from "../category/Category";
 import {Chevron} from "../chevron/Chevron";
+import {Payment} from "../payment/Payment";
+import {Report} from "../report/Report";
 import {NavItem} from "./__item/NavItem";
 import {NavList} from "./__list/NavList";
 
@@ -14,18 +18,19 @@ export class Nav extends Component {
         this.state = {
             visible: false,
             menuItems: [
-                {id: 1, name: "ПЛАТЕЖИ", content: paymentIcon},
-                {id: 2, name: "КАТЕГОРИИ", content: categoryIcon},
-                {id: 3, name: "ОТЧЕТЫ", content: reportIcon},
-                {id: 4, name: "АНАЛИТИКА", content: analyticsIcon},
+                {id: 1, name: "ПЛАТЕЖИ", icon: paymentIcon, content: <Payment/>},
+                {id: 2, name: "КАТЕГОРИИ", icon: categoryIcon, content: <Category/>},
+                {id: 3, name: "ОТЧЕТЫ", icon: reportIcon, content: <Report/>},
+                {id: 4, name: "АНАЛИТИКА", icon: analyticsIcon, content: <Analytics/>},
             ]
         }
     }
 
     render() {
         let navItems = this.state.menuItems.map(value =>
-            <NavItem icon={value.content}
+            <NavItem icon={value.icon}
                      text={value.name}
+                     content={value.content}
                      textVisible={this.state.visible}
                      setMainContent={this.props.setMainContent}
                      key={value.id}
