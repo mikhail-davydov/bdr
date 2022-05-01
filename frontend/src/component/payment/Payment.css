@@ -1,0 +1,24 @@
+.payment-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-form__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.payment-form__fieldset {
+    display: flex;
+}
+
+
+/* payment content */
+.payment-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
