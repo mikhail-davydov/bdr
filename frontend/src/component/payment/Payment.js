@@ -26,7 +26,7 @@ export class Payment extends Component {
                             <input className="payment-form__date" name={"date"} type="date"/>
                         </li>
                         <li className="payment-form__item">
-                            <input className="payment-form__amount" name={"amount"} type="number"/>
+                            <input className="payment-form__amount" name={"amount"} type="number" step={"0.01"}/>
                         </li>
                         <li className="payment-form__item">
                             <fieldset className={"payment-form__fieldset"}>
