@@ -18,4 +18,7 @@ code {
 button, input, select, textarea {
     font-family: inherit;
     font-size: 1vw;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
