@@ -1,5 +1,5 @@
-@import "reset.css";
-@import "global.css";
+@import "./reset.css";
+@import "./global.css";
 
 html {
     height: 100%;
@@ -13,4 +13,14 @@ body {
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+button, input, select, textarea {
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: inherit;
+    font-size: 1vw;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }

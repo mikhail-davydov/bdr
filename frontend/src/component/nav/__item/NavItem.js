@@ -11,18 +11,17 @@ export class NavItem extends Component {
     }
 
     getNavItemContent() {
-        let mainContent = this.props.text;
         let setMainContent = this.props.setMainContent;
 
         let navItemIconOnly =
-            <li className="nav__item-container" onClick={() => setMainContent(mainContent)}>
+            <li className="nav__item-container" onClick={() => setMainContent(this.props.content)}>
                 <div className="nav__item icon">
                     {this.props.icon}
                 </div>
             </li>;
 
         let navItemIconWithText =
-            <li className="nav__item-container" onClick={() => setMainContent(mainContent)}>
+            <li className="nav__item-container" onClick={() => setMainContent(this.props.content)}>
                 <div className="nav__item icon">
                     {this.props.icon}
                 </div>

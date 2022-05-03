@@ -7,7 +7,7 @@
 }
 
 .chevron--up {
-    transform: rotate(-135deg);
+    transform: rotate(-135deg) translate(-20%, -20%);
 }
 
 .chevron--right {
@@ -15,7 +15,7 @@
 }
 
 .chevron--down {
-    transform: rotate(45deg);
+    transform: rotate(45deg) translate(-20%, -20%);
 }
 
 .chevron--left {
