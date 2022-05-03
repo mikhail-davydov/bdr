@@ -16,6 +16,8 @@ code {
 }
 
 button, input, select, textarea {
+    -webkit-appearance: none;
+    appearance: none;
     font-family: inherit;
     font-size: 1vw;
     box-sizing: border-box;
