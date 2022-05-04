@@ -12,11 +12,9 @@ export class PaymentForm extends Component {
 
     render() {
         return (
-            <div>
-                <form className="payment-form" onSubmit={this.onSubmit}>
-                    <PaymentFormList/>
-                </form>
-            </div>
+            <form className="payment-form" onSubmit={this.onSubmit}>
+                <PaymentFormList/>
+            </form>
         );
     }
 
