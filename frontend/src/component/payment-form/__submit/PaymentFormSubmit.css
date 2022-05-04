@@ -1,0 +1,11 @@
+.payment-form__submit {
+    border: 1px solid var(--dark);
+    height: 2vw;
+    border-radius: 3px;
+    color: var(--dark);
+    padding: 0 1vw;
+}
+
+.payment-form__submit:hover {
+    background-color: var(--light);
+}

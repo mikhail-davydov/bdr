@@ -1,0 +1,11 @@
+.payment-form__amount {
+    border: 1px solid var(--dark);
+    height: 2vw;
+    border-radius: 3px;
+    color: var(--dark);
+    padding: 0 1vw;
+}
+
+.payment-form__amount {
+    width: 9vw;
+}

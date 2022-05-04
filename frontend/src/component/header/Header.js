@@ -102,7 +102,7 @@ class Header extends Component {
     }
 
     componentDidMount() {
-        //todo: fetch list from db
+        //todo: fetch companies list from db
         let companiesList = [
             {
                 id: 1, name: "Компания 1", isVisible: false,
