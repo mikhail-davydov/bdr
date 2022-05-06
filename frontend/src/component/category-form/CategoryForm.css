@@ -1,0 +1,27 @@
+.category-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.category-form__name,
+.category-form__comment,
+.category-form__submit {
+    border: 1px solid var(--dark);
+    height: 2vw;
+    border-radius: 3px;
+    color: var(--dark);
+    padding: 0 1vw;
+}
+
+.category-form__name {
+    width: 30%;
+}
+
+.category-form__comment {
+    width: 50%;
+}
+
+.category-form__submit:hover {
+    background-color: var(--light);
+}
