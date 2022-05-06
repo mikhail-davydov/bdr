@@ -10,6 +10,7 @@ export class PaymentFormAmount extends Component {
                    name={"amount"}
                    type="number"
                    step={"0.01"}
+                   min={"0"}
                    placeholder={"Сумма"}
             />
         );
