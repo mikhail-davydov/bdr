@@ -1,9 +1,9 @@
 import {Component} from "react";
 import {PaymentFormList} from "./__list/PaymentFormList";
 
-import "./PaymentForm.css";
+import "./AddPaymentForm.css";
 
-export class PaymentForm extends Component {
+export class AddPaymentForm extends Component {
 
     constructor(props) {
         super(props);

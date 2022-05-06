@@ -1,9 +1,9 @@
 import {Field, Form, Formik} from "formik";
 import {Component} from "react";
 
-import "./CategoryForm.css";
+import "./AddCategoryForm.css";
 
-export class CategoryForm extends Component {
+export class AddCategoryForm extends Component {
 
     render() {
         let buttonText = "Добавить";
