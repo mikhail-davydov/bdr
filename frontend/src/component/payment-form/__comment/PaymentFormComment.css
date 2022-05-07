@@ -4,8 +4,5 @@
     border-radius: 3px;
     color: var(--dark);
     padding: 0 1vw;
-}
-
-.payment-form__comment {
-    width: 25vw;
+    width: 35vw;
 }
