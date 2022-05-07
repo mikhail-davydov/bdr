@@ -21,7 +21,7 @@ export class AddPaymentForm extends Component {
     onSubmit(e) {
         e.preventDefault();
         // todo: handle form submit, add payment to list
-        console.log("Click on submit payment form button");
+        console.log("Click on add payment button");
     }
 
 }

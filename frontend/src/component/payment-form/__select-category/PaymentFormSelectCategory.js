@@ -31,7 +31,7 @@ export class PaymentFormSelectCategory extends Component {
                 <PaymentFormSelectOption
                     key="-1"
                     selectOptionId="-1"
-                    selectOptionText="Выбрать категорию"
+                    selectOptionText="Выбрать Категорию"
                     selectOptionDisabled={true}
                 />
                 {categories}

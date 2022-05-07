@@ -16,7 +16,7 @@ export class AddCategoryForm extends Component {
                 }}
                 onSubmit={() => {
                     // todo: handle form submit, add category to list
-                    console.log("Click on submit category form button");
+                    console.log("Click on add category button");
                 }}>
                 <Form className="category-form">
                     <Field className="category-form__name"
