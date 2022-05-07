@@ -1,0 +1,27 @@
+.report-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.report-form__name,
+.report-form__comment,
+.report-form__submit {
+    border: 1px solid var(--dark);
+    height: 2vw;
+    border-radius: 3px;
+    color: var(--dark);
+    padding: 0 1vw;
+}
+
+.report-form__name {
+    width: 30%;
+}
+
+.report-form__comment {
+    width: 50%;
+}
+
+.report-form__submit:hover {
+    background-color: var(--light);
+}

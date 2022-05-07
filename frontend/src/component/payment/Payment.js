@@ -10,7 +10,7 @@ export class Payment extends Component {
             <div className={"payment-container"}>
                 <AddPaymentForm/>
                 <div className="payment-content">
-                    Here is the payment content
+                    Here is the Payment tab content
                 </div>
             </div>
         );

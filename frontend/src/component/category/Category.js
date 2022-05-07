@@ -10,7 +10,7 @@ export class Category extends Component {
             <div className="category-container">
                 <AddCategoryForm/>
                 <div className="category-content">
-                    Here is the category content
+                    Here is the Category tab content
                 </div>
             </div>
         );
