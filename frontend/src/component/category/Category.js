@@ -1,5 +1,5 @@
 import {Component} from "react";
-import {AddCategoryForm} from "../category-form/AddCategoryForm";
+import {AddCategoryForm} from "../add-category-form/AddCategoryForm";
 
 import "./Category.css";
 
