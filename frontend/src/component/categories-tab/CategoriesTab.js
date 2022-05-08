@@ -1,9 +1,9 @@
 import {Component} from "react";
 import {AddCategoryForm} from "../add-category-form/AddCategoryForm";
 
-import "./Category.css";
+import "./CategoriesTab.css";
 
-export class Category extends Component {
+export class CategoriesTab extends Component {
 
     render() {
         return (

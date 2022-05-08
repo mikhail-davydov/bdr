@@ -1,9 +1,9 @@
 import {Component} from "react";
-import {Analytics} from "../analytics/Analytics";
-import {Category} from "../category/Category";
+import {AnalyticsTab} from "../analytics-tab/AnalyticsTab";
+import {CategoriesTab} from "../categories-tab/CategoriesTab";
 import {Chevron} from "../chevron/Chevron";
-import {Payment} from "../payment/Payment";
-import {Report} from "../report/Report";
+import {PaymentsTab} from "../payments-tab/PaymentsTab";
+import {ReportsTab} from "../reports-tab/ReportsTab";
 import {NavItem} from "./__item/NavItem";
 import {NavList} from "./__list/NavList";
 
@@ -18,10 +18,10 @@ export class Nav extends Component {
         this.state = {
             visible: false,
             menuItems: [
-                {id: 1, name: "ПЛАТЕЖИ", icon: paymentIcon, content: <Payment/>},
-                {id: 2, name: "КАТЕГОРИИ", icon: categoryIcon, content: <Category/>},
-                {id: 3, name: "ОТЧЕТЫ", icon: reportIcon, content: <Report/>},
-                {id: 4, name: "АНАЛИТИКА", icon: analyticsIcon, content: <Analytics/>},
+                {id: 1, name: "ПЛАТЕЖИ", icon: paymentIcon, content: <PaymentsTab/>},
+                {id: 2, name: "КАТЕГОРИИ", icon: categoryIcon, content: <CategoriesTab/>},
+                {id: 3, name: "ОТЧЕТЫ", icon: reportIcon, content: <ReportsTab/>},
+                {id: 4, name: "АНАЛИТИКА", icon: analyticsIcon, content: <AnalyticsTab/>},
             ]
         }
     }

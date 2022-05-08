@@ -1,9 +1,9 @@
 import {Component} from "react";
 import {AddReportForm} from "../add-report-form/AddReportForm";
 
-import "./Report.css";
+import "./ReportsTab.css";
 
-export class Report extends Component {
+export class ReportsTab extends Component {
 
     render() {
         return (

@@ -1,9 +1,9 @@
 import {Component} from "react";
 import {AddPaymentForm} from "../add-payment-form/AddPaymentForm";
 
-import "./Payment.css";
+import "./PaymentsTab.css";
 
-export class Payment extends Component {
+export class PaymentsTab extends Component {
 
     render() {
         return (

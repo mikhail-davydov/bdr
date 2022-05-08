@@ -1,8 +1,8 @@
 import {Component} from "react";
 
-import "./Analytics.css";
+import "./AnalyticsTab.css";
 
-export class Analytics extends Component {
+export class AnalyticsTab extends Component {
 
     render() {
         return (
