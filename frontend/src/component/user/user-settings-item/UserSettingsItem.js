@@ -5,12 +5,13 @@ import "./UserSettingsItem.css";
 export class UserSettingsItem extends Component {
 
     render() {
-        let content = this.props.content;
+        let settingName = this.props.settingName;
+        let settingContent = this.props.settingContent;
         let onClick = this.props.onClick;
         return (
             <li className="user-settings__item"
-                onClick={() => onClick(content)}>
-                {content}
+                onClick={() => onClick(settingContent)}>
+                {settingName}
             </li>
         )
     }

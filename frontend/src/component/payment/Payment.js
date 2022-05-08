@@ -1,5 +1,5 @@
 import {Component} from "react";
-import {AddPaymentForm} from "../payment-form/AddPaymentForm";
+import {AddPaymentForm} from "../add-payment-form/AddPaymentForm";
 
 import "./Payment.css";
 

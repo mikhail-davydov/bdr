@@ -1,4 +1,5 @@
 import {Component} from "react";
+import {CompaniesSettings} from "../../companies-settings/CompaniesSettings";
 import {UserSettingsItem} from "../user-settings-item/UserSettingsItem";
 
 import "./UserSettings.css";
@@ -10,10 +11,10 @@ export class UserSettings extends Component {
         this.state = {
             userSettings: [
                 {
-                    id: 1, name: "Настройки"
+                    id: 1, name: "Настройки", content: "Настройки"
                 },
                 {
-                    id: 2, name: "Компании"
+                    id: 2, name: "Компании", content: <CompaniesSettings/>
                 }
             ]
         }
@@ -32,8 +33,8 @@ export class UserSettings extends Component {
             .map((setting) =>
                 <UserSettingsItem key={setting.id}
                                   onClick={this.props.onClickItem}
-                                  content={setting.name}
-
+                                  settingName={setting.name}
+                                  settingContent={setting.content}
                 />
             );
     }

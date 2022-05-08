@@ -1,5 +1,5 @@
 import {Component} from "react";
-import {AddReportForm} from "../report-form/AddReportForm";
+import {AddReportForm} from "../add-report-form/AddReportForm";
 
 import "./Report.css";
 

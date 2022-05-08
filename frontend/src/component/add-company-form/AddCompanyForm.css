@@ -1,0 +1,27 @@
+.company-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.company-form__name,
+.company-form__comment,
+.company-form__submit {
+    border: 1px solid var(--dark);
+    height: 2vw;
+    border-radius: 3px;
+    color: var(--dark);
+    padding: 0 1vw;
+}
+
+.company-form__name {
+    width: 30%;
+}
+
+.company-form__comment {
+    width: 50%;
+}
+
+.company-form__submit:hover {
+    background-color: var(--light);
+}
