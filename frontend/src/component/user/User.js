@@ -4,6 +4,7 @@ import Icon from "../icon/Icon";
 
 import "./User.css";
 
+// todo: rename to UserInfo
 class User extends Component {
 
     render() {
