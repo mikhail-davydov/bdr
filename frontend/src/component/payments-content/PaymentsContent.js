@@ -1,12 +1,29 @@
-import {useMemo} from "react";
-import {useTable} from "react-table";
+import {useEffect, useMemo, useState} from "react";
+import {useGlobalFilter, useSortBy, useTable} from "react-table";
 
 import "./PaymentsContent.css";
 
-export function PaymentsContent() {
+export default function PaymentsContent() {
 
-    const data = useMemo(
-        () => [
+    const [data, setData] = useState([]); // payments data
+    const [filterInput, setFilterInput] = useState(""); // search field
+
+    // search field: update the state when input changes
+    const handleFilterChange = (e) => {
+        const value = e.target.value || "";
+        setGlobalFilter(value)
+        setFilterInput(value);
+    };
+
+    useEffect(() => {
+
+        // (async () => {
+        //     const result = await axios("https://api.tvmaze.com/search/shows?q=snow");
+        //     setData(result.data);
+        // })();
+
+        // todo: fetch payments from db with request to backend
+        setData([
             {
                 category: "Налоги",
                 date: "01.01.2022",
@@ -25,9 +42,9 @@ export function PaymentsContent() {
                 amount: 101,
                 comment: "",
             },
-        ],
-        []
-    )
+        ])
+
+    }, []);
 
     const columns = useMemo(
         () => [
@@ -57,23 +74,34 @@ export function PaymentsContent() {
         headerGroups,
         rows,
         prepareRow,
-    } = useTable({columns, data})
+        setGlobalFilter
+    } = useTable({columns, data},
+        useGlobalFilter,
+        useSortBy
+    );
 
     return (
+
         <div className="payment-content">
-            <table {...getTableProps()} style={{border: "solid 1px grey"}}>
-                <thead>
+            <input className="table-search"
+                   value={filterInput}
+                   onChange={handleFilterChange}
+                   placeholder={"Поиск"}
+            />
+            <table className="payment-table" {...getTableProps()}>
+                <thead className="payment-table__header">
                 {headerGroups.map(headerGroup => (
-                    <tr {...headerGroup.getHeaderGroupProps()}>
+                    <tr className="payment-table__header-row" {...headerGroup.getHeaderGroupProps()}>
                         {headerGroup.headers.map(column => (
-                            <th
-                                {...column.getHeaderProps()}
-                                style={{
-                                    border: "solid 1px grey",
-                                    background: "lightgray",
-                                    color: "black",
-                                    fontWeight: "bold",
-                                }}
+                            <th  {...column.getHeaderProps(column.getSortByToggleProps())}
+                                 className="payment-table__header-column"
+                                // className={
+                                //     column.isSorted
+                                //         ? column.isSortedDesc
+                                //             ? "payment-table__header-column chevron chevron--up"
+                                //             : "payment-table__header-column chevron chevron--down"
+                                //         : "payment-table__header-column"
+                                // }
                             >
                                 {column.render("Header")}
                             </th>
@@ -81,22 +109,15 @@ export function PaymentsContent() {
                     </tr>
                 ))}
                 </thead>
-                <tbody {...getTableBodyProps()}>
+                <tbody className="payment-table__body" {...getTableBodyProps()}>
                 {rows.map(row => {
                     prepareRow(row)
                     return (
-                        <tr {...row.getRowProps()}>
+                        <tr className="payment-table__body-row" {...row.getRowProps()}>
                             {row.cells.map(cell => {
                                 return (
-                                    <td
-                                        {...cell.getCellProps()}
-                                        style={{
-                                            padding: "10px",
-                                            border: "solid 1px gray",
-                                            background: "white",
-                                        }}
-                                    >
-                                        {cell.render('Cell')}
+                                    <td className="payment-table__body-column" {...cell.getCellProps()}>
+                                        {cell.render("Cell")}
                                     </td>
                                 )
                             })}

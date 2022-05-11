@@ -2,5 +2,36 @@
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    flex-direction: column;
+}
+
+/* table */
+.payment-table {
+    width: 100%;
+    border: solid 1px grey;
+}
+
+.payment-table__header-column {
+    border: solid 1px grey;
+    background: lightgray;
+    color: black;
+    font-weight: bold;
+    position: relative;
+}
+
+.payment-table__body-column {
+    padding: 10px;
+    border: solid 1px gray;
+    background: white;
+}
+
+/* search */
+.table-search {
+    border: 1px solid var(--dark);
+    height: 2vw;
+    width: 100%;
+    border-radius: 3px;
+    color: var(--dark);
+    padding: 0 1vw;
+    margin: 1vw auto;
 }
