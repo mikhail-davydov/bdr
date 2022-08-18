@@ -18,10 +18,10 @@ export class Nav extends Component {
         this.state = {
             visible: false,
             menuItems: [
-                {id: 1, name: "ПЛАТЕЖИ", icon: paymentIcon, content: <PaymentsTab/>},
-                {id: 2, name: "КАТЕГОРИИ", icon: categoryIcon, content: <CategoriesTab/>},
-                {id: 3, name: "ОТЧЕТЫ", icon: reportIcon, content: <ReportsTab/>},
-                {id: 4, name: "АНАЛИТИКА", icon: analyticsIcon, content: <AnalyticsTab/>},
+                {id: 1, name: "платежи", icon: paymentIcon, content: <PaymentsTab/>},
+                {id: 2, name: "категории", icon: categoryIcon, content: <CategoriesTab/>},
+                {id: 3, name: "отчеты", icon: reportIcon, content: <ReportsTab/>},
+                {id: 4, name: "аналитика", icon: analyticsIcon, content: <AnalyticsTab/>},
             ]
         }
     }
@@ -29,7 +29,7 @@ export class Nav extends Component {
     render() {
         let navItems = this.state.menuItems.map(value =>
             <NavItem icon={value.icon}
-                     text={value.name}
+                     text={value.name.toUpperCase()}
                      content={value.content}
                      textVisible={this.state.visible}
                      setMainContent={this.props.setMainContent}

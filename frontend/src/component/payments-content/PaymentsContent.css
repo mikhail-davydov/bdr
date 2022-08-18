@@ -16,7 +16,7 @@
     background: lightgray;
     color: black;
     font-weight: bold;
-    position: relative;
+    /*position: relative;*/
 }
 
 .payment-table__body-column {

@@ -27,18 +27,18 @@ export default function PaymentsContent() {
             {
                 category: "Налоги",
                 date: "01.01.2022",
-                amount: -100,
+                amount: 100,
                 comment: "ОМС, первый квартал",
             },
             {
                 category: "Новая Категория",
-                date: "01.02.2022",
-                amount: 99.01,
+                date: "02.03.2022",
+                amount: -99.04,
                 comment: "Возврат долгов",
             },
             {
                 category: "Еще одна другая категория",
-                date: "02.01.2022",
+                date: "03.04.2022",
                 amount: 101,
                 comment: "",
             },
